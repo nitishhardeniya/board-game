@@ -10,7 +10,7 @@
 	<div ng-app="myApp">
 
 		<div class="container" ng-controller="boardCtrl">
-
+			<h3>Board Game</h3>
 			<div class="row" ng-if="congratsMessage">
 				<div class="col-md success-msg">
 					{{congratsMessage}}		
@@ -39,7 +39,7 @@
 			<div class="col-md-12 board">
 
 				<div class="row" ng-repeat="row in cells track by $index">
-					<div class="column" ng-repeat="column in row track by $index" ng-class="{'active': $index == focusCell}" ng-click="cellClicked($index == focusCell)">{{$index}}</div>
+					<div class="column" ng-repeat="column in row track by $index" ng-class="{'active': $parent.$index == focusCell && $index == focusCell}" ng-click="cellClicked($parent.$index == focusCell && $index == focusCell)">{{$index}}</div>
 				</div>
 			</div>
 			
