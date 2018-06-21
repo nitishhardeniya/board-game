@@ -3,7 +3,7 @@
 }
 
 .column {
-	background-color: lightgrey;
+	background-color: #f1f1f1;
 	width: 40px;
 	height: 40px;
 	border: 1px solid #ccc;
@@ -21,11 +21,5 @@
 }
 
 .active {
-	background-color: green;
-}
-
-.board {
-	margin-left: 40%;
-    margin-top: 5%;
-    max-width : 700px;
+	background-color: #32CD32;
 }

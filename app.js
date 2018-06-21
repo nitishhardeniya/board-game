@@ -23,16 +23,15 @@ app.controller('boardCtrl',['$scope',function($scope) {
 	$scope.levelChanged = function(){
 		$scope.score = 0;
 		$scope.cells = [];
-		let levelValue = $scope.levels.filter(function(item){
+		$scope.levelValue = $scope.levels.filter(function(item){
 			return item.name == $scope.selectedLevel;
 		})[0].value;
 		
-		let matrix =  $scope.createMatrix(levelValue);
+		let matrix =  $scope.createMatrix($scope.levelValue);
 		
-		for (var i = 0; i < levelValue; i++) {
+		for (var i = 0; i < $scope.levelValue; i++) {
 			$scope.cells.push(matrix);
 		}
-		console.log($scope.cells);
 	};
 
 	$scope.cellClicked = function(cellFocused){
@@ -52,17 +51,16 @@ app.controller('boardCtrl',['$scope',function($scope) {
 	}
 
 	$scope.startGame = function(){
-		(function(){
-			setInterval(function(){
-				$scope.focusCell = $scope.getRandomInt(3);
-				console.log($scope.focusCell);
-				$scope.$apply();
-			},1000);
-		})();
+		$scope.score = 0;
+		$scope.intervalEvent = setInterval(function(){
+			$scope.focusCell = $scope.getRandomInt($scope.levelValue);
+			$scope.$apply();
+		},1000);
 	}
 
 	$scope.stopGame = function(){
-		clearInterval()
+		console.log('stop')
+		clearInterval($scope.intervalEvent);
 	}
 
 
