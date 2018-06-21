@@ -1,0 +1,30 @@
+.container {
+	margin-top: 20px;
+}
+
+.column {
+	background-color: lightgrey;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ccc;
+	margin: 1px;
+	cursor: pointer;
+}
+
+.success-msg {
+	background-color: lightgreen;
+	height: 40px;
+	width: 100%;
+	border: 2px solid green;
+	color: green;
+	margin-bottom: 10px;
+}
+
+.active {
+	background-color: green;
+}
+
+.board {
+	margin-left: 40%;
+    margin-top: 5%;
+}
